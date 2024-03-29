@@ -14,3 +14,5 @@ router.get('/', async () => {
     hello: 'world',
   }
 })
+
+router.post('/register', '#controllers/auth_controller.register')
