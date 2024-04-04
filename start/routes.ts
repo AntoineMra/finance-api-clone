@@ -8,11 +8,10 @@
 */
 
 import router from '@adonisjs/core/services/router'
-
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+import { middleware } from './kernel.js'
 
 router.post('/register', '#controllers/auth_controller.register')
+
+router.post('/login', '#controllers/auth_controller.login')
+
+router.post('/budgets', '#controllers/budgets_controller.store').use(middleware.auth())
