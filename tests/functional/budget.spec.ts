@@ -8,7 +8,6 @@ test.group('Should manage budgets', () => {
       password: 'password',
     })
     const token = authResponse.body().token.token
-    console.log(token)
 
     const response = await client
       .post('/budgets')

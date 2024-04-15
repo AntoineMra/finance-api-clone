@@ -17,6 +17,6 @@ export default class BudgetsController {
     }
     const budget = await owner.related('budgets').create(payload)
 
-    return ctx.response.json(budget)
+    return ctx.response.status(201).json(budget)
   }
 }
