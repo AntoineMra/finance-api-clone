@@ -24,6 +24,10 @@ test.group('Should manage budgets', () => {
     assert.containsSubset(response.body(), {
       expense: 1000,
       income: 2000,
+    })
+    assert.containsSubset(response.body(), {
+      expense: 1000,
+      income: 2000,
       balance: 200,
       date: '02/2022',
       savingsRate: 0.5,
