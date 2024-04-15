@@ -1,12 +1,7 @@
-import { inject } from '@adonisjs/core'
-import { HttpContext } from '@adonisjs/core/http'
+import Budget from "#models/budget";
 
-@inject()
 export default class BudgetService {
-  constructor(protected ctx: HttpContext) {}
-
-  async all() {
-    console.log(this.ctx.auth.user)
-    // return users from db
+  async calculateBalance(budget: Budget): number {
+    return budget.income - budget.expense;
   }
 }
