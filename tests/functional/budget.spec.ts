@@ -1,7 +1,7 @@
 import { test } from '@japa/runner'
 
 test.group('Should manage budgets', () => {
-  test('Should be able to create a budget', async ({ client }) => {
+  test('Should be able to create a budget', async ({ assert, client }) => {
     // Get a test token from the auth controller
     const authResponse = await client.post('/login').json({
       username: 'mockmock',
@@ -21,8 +21,8 @@ test.group('Should manage budgets', () => {
         date: '02/02/2022',
       })
 
-    //response.assertStatus(201)
-    response.assertBodyContains({
+    response.assertStatus(201)
+    assert.containsSubset(response.body, {
       expense: 1000,
       income: 2000,
       balance: 200,
