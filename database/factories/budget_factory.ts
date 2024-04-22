@@ -6,8 +6,8 @@ export const BudgetFactory = factory
   .define(Budget, async ({ faker }) => {
     return {
       date: faker.date.recent(),
-      expense: faker.datatype.number({ min: 100, max: 2000, precision: 0.01 }),
-      income: faker.datatype.number({ min: 100, max: 2000, precision: 0.01 }),
+      expense: faker.number.int({ min: 1000, max: 5000 }),
+      income: faker.number.int({ min: 1000, max: 5000 }),
     }
   })
   .relation('owner', () => UserFactory)

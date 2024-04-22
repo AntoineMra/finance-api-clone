@@ -1,7 +1,13 @@
-import Budget from "#models/budget";
+import Budget from '#models/budget'
 
 export default class BudgetService {
-  async calculateBalance(budget: Budget): number {
-    return budget.income - budget.expense;
+  calculateBalance(budget: Budget): number {
+    const { income, expense } = budget
+    return income - expense
+  }
+
+  calculateSavingsRate(budget: Budget): number {
+    const { income, expense } = budget
+    return (income - expense) / income
   }
 }

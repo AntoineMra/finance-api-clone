@@ -11,10 +11,10 @@ export default class Budget extends BaseModel {
   declare date: Date
 
   @column()
-  declare expense: Number
+  declare expense: number
 
   @column()
-  declare income: Number
+  declare income: number
 
   @column()
   declare ownerId: number

@@ -15,3 +15,5 @@ router.post('/register', '#controllers/auth_controller.register')
 router.post('/login', '#controllers/auth_controller.login')
 
 router.post('/budgets', '#controllers/budgets_controller.store').use(middleware.auth())
+
+router.get('/budgets', '#controllers/budgets_controller.index')
